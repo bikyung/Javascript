@@ -11,7 +11,7 @@ console.log(a - b) //? -3
 console.log(a * b) //? 10
 console.log(a / b) //? 0.4
 
-//* 값(데이터)의 재할당 가능!
+//* 값(데이터)의 재할당 가능! (let)
 let a = 12;
 console.log(a); //? 12
 
