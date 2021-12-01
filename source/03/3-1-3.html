@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+        
+        // 아침 점심 저녁 밥 시간 구분하기
+        const eat = new Date();
+        const hours = eat.getHours();
+
+        if(hours < 10) {
+          alert('아침밥 먹을 시간입니다.');
+        } else if(hours < 16) {
+          alert('점심 먹을 시간입니다.');
+        } else {
+          alert('저녁먹을 시간입니다.');
+        }
+    </script>
+  </head> 
+  <body>  
+  </body>
+</html>
