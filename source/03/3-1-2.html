@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // 오전과 오후 구분하기
+
+      const date = new Date()
+      const hour = date.getHours()
+
+        if (hour < 12) { 
+          alert('오전입니다.')  
+      }
+        if (hour >= 12) {
+          alert('오후입니다.')
+      }
+
+
+      // 30분 이전과 이후를 구분하기
+      const date = new Date();
+      const minute = date.getMinutes();
+
+      if(minute > 30) {
+        alert('30분 이후 입니다.')
+      } else if(minute < 30) {
+        alert('30분 이전입니다.')
+      }
+    
+    </script>
+  </head> 
+  <body>  
+  </body>
+</html>
