@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      // switch문 사용하여 아침 점심 저녁 구분하기
+      const date = new Date()
+      const hour = date.getHours()
+
+      switch (true) {
+        case hour < 11:
+          alert('아침 먹을 시간입니다.')
+          break
+        case hour < 15:
+          alert('점심 먹을 시간입니다.')
+          break
+        default:
+          alert('저녁 먹을 시간입니다.')
+          break
+      }
+    </script>
+  </head>
+  <body>      
+  </body>
+</html>
