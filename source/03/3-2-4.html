@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title></title>
+  <script>
+      // input tag 값을 받아 홀수 짝수 확인하기
+      function check() {
+
+      const num = document.getElementById("number").value;
+
+      if(num % 2 == 0) { 
+        alert('짝수입니다.');
+      }else {
+        alert('홀수입니다.');
+      }                
+    }
+  </script>
+  </head>
+  <body>
+      <!-- input에서 입력 값 받아서 prompt와 똑같이 -->
+      <input type="text" id="number">
+      <button onClick="check()">확인</button>
+  </body>
+</html>
