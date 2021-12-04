@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+      
+      // 태어난 해 간단하게 구하기 (split 사용)
+      const 입력 = Number(prompt('태어난 해를 입력해 주세요'))
+      const tti = '원숭이,닭,개,돼지,쥐,소,호랑이,토끼,용,뱀,말,양'.split(',')
+
+      alert(`${입력}년에 태어났다면 ${tti[입력 % 12]} 입니다.`)
+
+      
+      const rawinput = prompt('태어난 해를 입력하세요');
+      const year = Number(rawinput);
+
+      let 간
+      const e1 = year % 10
+      if(e1 == 0) {간 = '경'}
+      if(e1 == 1) {간 = '신'}
+      if(e1 == 2) {간 = '임'}
+      if(e1 == 3) {간 = '계'}
+      if(e1 == 4) {간 = '갑'}
+      if(e1 == 5) {간 = '을'}
+      if(e1 == 6) {간 = '병'}
+      if(e1 == 7) {간 = '정'}
+      if(e1 == 8) {간 = '무'}
+      if(e1 == 9) {간 = '기'}
+
+      let 띠
+      const e2 = year % 12
+      if(e2 == 0) {띠 = '신'} 
+      if(e2 == 1) {띠 = '유'} 
+      if(e2 == 2) {띠 = '술'} 
+      if(e2 == 3) {띠 = '해'} 
+      if(e2 == 4) {띠 = '자'} 
+      if(e2 == 5) {띠 = '축'} 
+      if(e2 == 6) {띠 = '인'} 
+      if(e2 == 7) {띠 = '묘'} 
+      if(e2 == 8) {띠 = '진'} 
+      if(e2 == 9) {띠 = '사'} 
+      if(e2 == 10) {띠 = '오'} 
+      if(e2 == 11) {띠 = '미'} 
+
+      alert(`${year}년은 ${간}${띠}입니다`);
+
+
+      </script>
+  </head>
+  <body></body>
+</html>
+ 
