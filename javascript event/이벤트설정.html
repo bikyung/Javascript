@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 이벤트 설정</title>
+  </head> 
+  <body>
+    <div class="container">
+      <p>askfalsfalskdaklsdjaklsdjka</p>
+      <button id="sumbit">Click me</button>
+    </div>
+  <script>
+    // 마우스로 클릭 이벤트(click)
+    const btn = document.getElementById('sumbit');
+    const container = document.querySelector('.container');
+
+     // 할일(함수) = function() {}
+      btn.addEventListener('click', function() {
+        // 클릭하면 실제로 할일
+        btn.style.color = 'red';
+        console.log('버튼이 클릭되었습니다.');
+      });
+
+     // 마우스로 가 들어오면(mouseenter)
+      btn.addEventListener('mouseenter', function() {
+        btn.style.color = 'blue';
+        console.log('마우스가 들어왔습니다.');
+      });
+        // 마우스가 나가면(mouseleave) 
+
+      btn.addEventListener('mouseleave', function() {
+        btn.style.color = 'green';
+        console.log('마우스가 나갔습니다.');
+      });
+      
+      window.addEventListener('keydown', function(event){
+        console.log(event.key);
+        console.log(event.keyCode);
+       });
+
+  </script>    
+  </body>
+</html>

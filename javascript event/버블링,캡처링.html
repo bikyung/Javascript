@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-color: red;
+}
+
+.parent {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+}
+
+.child {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.target {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+
+div:hover {
+  background-color: gray;
+  opacity: 0.5;
+}
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div class="parent">
+      <div class="child">
+        <div class="target">Target</div>
+      </div>      
+    </div>    
+  </div>
+  <script>
+    function bubblingAndCapturing(useCapture, stop) {
+      document.querySelector('body').addEventListener('click', function() {
+      alert("body");
+    }, useCapture)
+  
+    document.querySelector('.root').addEventListener('click', function() {
+      alert("root");
+    }, useCapture)
+  
+    document.querySelector('.parent').addEventListener('click', function() {
+      alert("parent");
+    }, useCapture)
+  
+    document.querySelector('.child').addEventListener('click', function() {
+      alert("child");
+    }, useCapture)
+  
+    document.querySelector('.target').addEventListener('click', function(e) {
+      alert("target");
+      if (stop) {
+        e.stopPropagation();
+      }
+    }, useCapture) 
+  }
+  
+  bubblingAndCapturing();
+  // bubblingAndCapturing(true);
+  // bubblingAndCapturing(false, true);
+
+  // 기본값이 false임  == > false로 진행시 버블링으로 진행 
+   // target -> child -> parent -> root -> body 순으로 알림창을 뜨는 것을 확인
+  // true로 진행시 캡쳐링으로 진행( 위와 반대로 뜸)
+  </script>
+</body>
+
+</html>

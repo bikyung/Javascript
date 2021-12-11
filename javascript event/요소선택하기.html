@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 요소 선택하는 4가지 방법</title>
+  
+  </head> 
+  <body>
+    <h1 id='title'>Javascript selector</h1>
+  <div class="container">
+    <ul id="list1" class="list">
+      <li class="red">li 1</li>
+      <li>li 2</li>
+      <li>li 3</li>
+      <li>li 4</li>
+    </ul>
+  </div>  
+  <div class="container">
+    <ul id="list2" class="list">
+      <li>li 1</li>
+      <li>li 2</li>
+      <li>li 3</li>
+      <li>li 4</li>
+    </ul>
+  </div>
+  <p>123123124125jqweqwkejqwkeqjwoeijqwe</p>
+  <p>1231ffeqwkejqwkeqjwoeijqwe</p>
+  <p>1231231weqejqwkeqjwoeijqwe</p>
+  <script>
+    // javascript 아이디 selector 
+    const idSelector = document.getElementById('title');
+      idSelector.style.color ='red';
+      idSelector.style.fontSize ='50px';
+    //   // javascript 클래스 selector 
+    let myList = document.getElementsByClassName('list');
+      myList[0].style.color = 'violet';
+      // javascript 태그 selector 
+    const para = document.getElementsByTagName('p');
+      for(let i = 0; i <= para.length; i++) {
+        para[i].style.color = 'blue';
+      }
+      // javascript css선택자 selector 
+    let myList2 = document.querySelector('.list .red')
+      mylist2.style.color = 'red'
+    console.log(myList)
+  </script>    
+  </body>
+</html>
