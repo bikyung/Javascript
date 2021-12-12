@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head> 
+  <body>
+  <script>
+  // Q1. 5명의 코로나 검사 결과가 담긴 배열이 있다. 이 배열을 입력값으로 하여 양성이 나온 명단을 출력하는 함수를 만들어보세요.
+    const data = [
+      {
+        name: "doum",
+        isPositive: true
+      },
+      {
+        name: "haemoon",
+        isPositive: false
+      },
+      {
+        name: "bora",
+        isPositive: true
+      },
+      {
+        name: "sohyun",
+        isPositive: false
+      },
+      {
+        name: "jiyoung",
+        isPositive: false
+      }
+    ];
+    function covid(data) {
+      const arr = [];
+      for (let i = 0; i < data.length; i++) {
+        const element = data[i];
+        if (element.isPositive === true) {
+          arr.push(element.name);
+        }
+      }
+      return arr;
+    }
+    console.log(covid(data));
+
+    // Q2. 학점 계산기
+    const studentInfo = {
+      name: "doum",
+      score: 88
+    };
+    function getScore(info) {
+      let result = "";
+      const score = info.score;
+      if (score > 0 && score < 70) {
+        result = "F";
+      } else if (score >= 70 && score < 75) {
+        result = "C";
+      } else if (score >= 75 && score < 80) {
+        result = "C+";
+      } else if (score >= 80 && score < 85) {
+        result = "B";
+      } else if (score >= 85 && score < 90) {
+        result = "B+";
+      } else if (score >= 90 && score < 95) {
+        result = "A";
+      } else if (score >= 95 && score < 100) {
+        result = "A+";
+      }
+      return `${info.name} 님의 학점은 ${result} 이다.`;
+    }
+    console.log(getScore(studentInfo)); // -> doum 님의 학점은 B+ 이다.
+
+    // Q3.  Math.pow 와 동일한 함수를 구현해보기
+    // Math.pow(2, 3); // 2의 3승 -> 8*
+    // Math.pow(4, 2); // 4의 2승 -> 16*
+    // 함수(2, 3); -> 8*
+
+    function multiply(a, b) {
+      let result = 1;
+      for (let i = 0; i < b; i++) {
+        result *= a;
+      }
+      return result;
+    }
+    console.log(multiply(2, 3));
+
+    // Q4. 2개의 값 중에 무엇이 더 작은지 판별하는 함수
+    function getSmallNumber(a, b) {
+      // let result = (a < b) ? a : (a === b ? "같다" : b); // anti pattern (NG)
+      let result;
+      if (a < b) {
+        result = a;
+      } else if (a > b) {
+        result = b;
+      } else {
+        result = "같다";
+      }
+      return result;
+    }
+    console.log(getSmallNumber(10, 100)); // -> 10
+
+
+  </script>    
+  </body>
+</html>
