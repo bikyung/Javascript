@@ -12,4 +12,6 @@ Javascript 함수 공부
 
 Javascript 이벤트 
 
+Javascript 객체 및 참조에 의한전달, 값에의한 전달
+
 Javascript pair programming
