@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 이벤트 설정</title>
+    <style>
+      #content {
+        padding: 30px;
+        text-align: center;
+      }
+      #bigimages {
+        margin-bottom: 10px;
+      }
+      #big {
+        width: 310px;
+        height: 310px;
+      }
+      .small {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head> 
+  <body>
+    <div id="content">
+      <h2>이미지바꾸기</h2>
+      <div id="bigimages">
+        <img id="big" src="/images/bic/01-1.jpg" alt="bic">
+      </div>
+      <div id="smallimages">
+        <img class="small" src="/images/bic/01-1.jpg" alt="small">
+        <img class="small" src="/images/bic/02-1.jpg" alt="small">
+        <img class="small" src="/images/bic/03-1.jpg" alt="small">
+      </div>
+    </div>
+  <script>
+    const bigPic = document.querySelector("#big");
+    const smallPic = document.querySelectorAll('.small');
+
+    for(let i = 0; i < smallPic.length; i++) {
+      smallPic[i].addEventListener('click', changepic);
+    }
+
+    function changepic() {
+      let smallPicAttribute = this.getAttribute("src");
+        bigPic.setAttribute('src', smallPicAttribute);
+    }
+  </script>    
+  </body>
+</html>
