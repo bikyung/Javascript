@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addeventListner 속성으로 버튼 기능개발 : alert 박스 만들기</title>
+    <style>
+      .alert-box {
+        background-color: #6868da;
+        color: black;
+        padding: 20px;
+        border-radius: 5px;
+        display: none;
+      }
+    </style>
+  </head> 
+  <body>
+    <div class="alert-box" id="alert">
+      <p id="change">Alert Box</p> 
+      <button id="close">닫기</button>
+    </div>
+    <button id="open">버튼1</button>
+    <button id="open1">버튼2</button>
+
+
+  <script>
+    // document.getElementById('open').addEventListener('click', function(){
+    //   document.getElementById('alert').style.display = "block";
+    //   document.getElementById('change').innerHTML = '아이디입력';
+    // })
+    // document.getElementById('open1').addEventListener('click', function(){
+    //   document.getElementById('alert').style.display = "block";
+    //   document.getElementById('change').innerHTML = '비밀번호입력';
+    // })
+
+    // document.getElementById('close').addEventListener('click', function(){
+    //   document.getElementById('alert').style.display= "none";
+    // })
+
+
+    const btn1 = document.getElementById('open');
+    const btn2 = document.getElementById('open1');
+    const close1 = document.getElementById('close');
+    const box = document.getElementById('alert');
+    const change = document.getElementById('change');
+
+    btn1.addEventListener('click', function(){
+      box.style.display = "block";
+      change.innerHTML = "아이디입력";
+    })
+
+    btn2.addEventListener('click', function(){
+      box.style.display = "block";
+      change.innerHTML = '비밀번호 입력';
+    })
+
+    close1.addEventListener('click', function(){
+      box.style.display = 'none';
+    })
+
+
+  </script>    
+  </body>
+</html>
