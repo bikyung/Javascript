@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 이벤트 설정</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <style>
+    .hide {
+      display: none;
+    } 
+    #empty  {
+      display: none;
+    }
+    #empty1 {
+      display: none;
+    }
+    </style>
+    
+  </head> 
+  <body>
+    <input id="testinput" type="text">
+    <div id="modal" class="hide">
+      <h2>modal</h2>
+      
+      <form id="form">
+        <div class="form-group">
+          <input type="email" class="form-control" id="emailinput" placeholder="email">
+          <p id="empty">빈칸입니다.</p>
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="psw" placeholder="Password">
+          <p id="empty1">빈칸입니다.</p>
+        </div>
+        <button type="submit" class="btnclose">전송</button>
+      </form>
+      <button id="close">닫기</button>
+    </div>
+    <button id="btn">버튼</button>
+  <script>
+    
+
+      $('#btn').click(function(){
+        $('#modal').slideToggle();
+      });
+
+      $('#close').click(function(){
+        $('#modal').hide();
+      })
+
+      $('#form').on('submit', function(e){
+          if($('#emailinput').val() === "") {
+            e.preventDefault();
+            $('#empty').show();
+          }
+          else if($('#psw').val() === "") {
+          e.preventDefault();
+            $('#empty1').show();
+          }
+        })
+
+      // input tag 제이쿼리로 가져오는 방법 (val)
+      
+      // $('#btn').click(function(){
+      //   if($('#testinput').val() === '안녕')
+      //   $('#modal').slideToggle();
+      // })
+    // document.getElementById('nav-btn').addEventListener('click', function(){
+    //   document.getElementsByClassName('list-group')[0].style.display = 'block';
+    // })
+
+
+
+  </script>    
+  </body>
+</html>

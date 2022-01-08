@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 이벤트 설정</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <style>
+      .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        align-items: center;
+      }
+      .list-group {
+        display: none;
+      }
+    </style>
+    
+  </head> 
+  <body>
+    <div class="nav-menu">
+      <h4>네비게이션</h4>
+      <button id="nav-btn">items</button>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+  <script>
+    
+    $('#nav-btn').on('click', function(){
+      $('.list-group').fadeToggle();
+    })
+
+    // document.getElementById('nav-btn').addEventListener('click', function(){
+    //   document.getElementsByClassName('list-group')[0].style.display = 'block';
+    // })
+
+
+
+  </script>    
+  </body>
+</html>
