@@ -14,13 +14,15 @@
         background-size: cover;
         color: white;
       }
-      .black {
-        background: rgba(0,0,0,0.5);
+    .black {
+        background-color: rgba(0,0,0,0.5);
         position: fixed;
         z-index: 5;
-        width: 100%;
         height:100%;
+        width: 100%;
         display: none;
+        /* transition: all 1.5s; */
+        /* transform: translateY(-1200px); */
       }
       .white {
         background: white;
@@ -36,6 +38,7 @@
         crossorigin="anonymous"></script>
   </head>
   <body>
+
     <div id="black" class="black">
       <div class="white">
         <p>로그인하세요</p>
@@ -61,15 +64,24 @@
         });
 
         // 자바스크립트 
-        document.getElementById('btn').addEventListener('click',function(){
-            document.getElementById('black').style.display = 'block';
-        })
+        // document.getElementById('btn').addEventListener('click',function(){
+        //     document.getElementById('black').style.display = 'block';
+        // })
 
-        document.getElementById('close').addEventListener('click', function() {
-          document.getElementById('black').style.display = 'none';
-        })
+        // document.getElementById('close').addEventListener('click', function() {
+        //   document.getElementById('black').style.display = 'none';
+        // })
 
 
+
+
+        // $('#btn').click(function(){
+        //   $('.black').show().css({'transform','translateY(0px)'}, 3000);
+        // })
+
+        // $('#close').click(function(){
+        //   $('#black').hide();
+        // })
 
       </script>
     

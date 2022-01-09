@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>자바스크립트 이벤트 설정</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <style>
+      .left-menu {
+        width: 150px;
+        height: 100%;
+        background-color: black;
+        color: white;
+        position: fixed;
+        margin-left: -150px;
+      }
+      #showmenu1 {
+        margin-left: 200px;
+      }
+    </style>
+  </head> 
+  <body>
+    
+    <!-- <h3 id="hi">안녕</h3> -->
+
+    <div class="left-menu">
+      <p>Menu Title</p>
+    </div>
+    <button id="showmenu">버튼</button>
+    <button id="showmenu1">버튼1</button>
+  <script>
+
+    // $('#hi').click(function(){
+    //   $(this).animate({marginLeft : '100px'},5000);
+    // })
+
+      $('#showmenu').click(function(){
+        $('.left-menu').animate({marginLeft: '0px'}, 3000)
+      })
+      $('#showmenu1').click(function(){
+        $('.left-menu').animate({marginLeft: '-150px'}, 3000)
+      })
+
+  </script>   
+
+  </body>
+</html>

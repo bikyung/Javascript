@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jquery 사용해보기</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  </head> 
+  <style>
+    div {
+      position: relative;
+    }
+    .change {
+      position: absolute;
+      left :0;
+    }
+    .change1 {
+      position: absolute;
+      display:none;
+    }
+    a {
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    
+    <a id="clickchange">&#60;</a>
+    <a id="clickchange1">&#62;</a>
+    <div>
+      <p class="change">클래스명 변경해보자</p>
+      <p class="change1">change1로 클래스명 변경해보자</p>
+    </div>
+  <script>
+
+    $('#clickchange').click(function(){
+      $('.change').hide();
+      $('.change1').show();
+    })
+    $('#clickchange1').click(function(){
+      $('.change').show();
+      $('.change1').hide();
+    })
+  </script>
+
+
+
+  </body>
+</html>
