@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>캐러셀 슬라이드</title>
+  <style>
+  .slide_box {
+    margin: 500px 0 0 700px;
+    border: rgb(255, 14, 135) 3px dotted;
+    width: 100px;
+    height: 100px;
+    /* overflow: hidden; */
+  }
+
+  .slide_item {
+    background-color: rgb(255, 215, 187);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: larger;
+    border: rgb(165, 165, 165) 0.5px solid;
+  }
+  .slide_list {
+    width: 900px;
+    display: flex;
+    height: 100px;
+  }
+
+  button {
+    margin-left: 610px;
+  }
+  </style>
+  </head> 
+  <body>
+    <div class="slide_box">
+      <div class="slide_list">
+        <div id="lastClone" class="slide_item">5</div>
+        <div class="slide_item">1</div>
+        <div class="slide_item">2</div>
+        <div class="slide_item">3</div>
+        <div class="slide_item">4</div>
+        <div class="slide_item">5</div>
+        <div id="firstClone" class="slide_item">1</div>
+      </div>
+    </div>
+    <button class="prevBtn">prev</button>
+    <button class="nextBtn">next</button>
+
+    <script src="transition.js"></script>
+
+  <script>
+    const carouselSlide = document.querySelector(".slide_list");
+    const carouselContents = document.querySelectorAll(".slide_item");
+
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
+
+    //counter
+    let counter = 1;
+    const size = carouselContents[0].clientWidth;
+
+    carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+
+    //Button Listeners
+    nextBtn.addEventListener("click", () => {
+      if (counter >= carouselContents.length - 1) return;
+      carouselSlide.style.transition = "transform 0.3s ease-in-out";
+      counter++;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (counter <= 0) return;
+      carouselSlide.style.transition = "transform 0.3s ease-in-out";
+      counter--;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    });
+
+    carouselSlide.addEventListener("transitionend", function () {
+    if (carouselContents[counter].id === "lastClone") {
+      carouselSlide.style.transition = "none";
+      counter = 1;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    }
+    if (carouselContents[counter].id === "firstClone") {
+      carouselSlide.style.transition = "none";
+      counter = carouselContents.length - counter;
+      carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
+    }
+  });
+  </script>    
+  </body>
+</html>
