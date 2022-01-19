@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>자바스크립트 아코디언</title>
+  <style>
+  html, body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.panel-question {
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.panel-heading {
+  font-weight: bold;
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel-body {
+  padding: 15px;
+}
+
+#btn-collapse {
+  margin-bottom: 10px;
+  background-color: #999;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  float: right;
+}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button id="btn-collapse">Collapse All</button>
+    <h2>FAQ</h2>
+    <section id="faq">
+      <div class="panel-question active">
+        <div class="panel-heading">
+          + Lorem ipsum dolor sit?
+        </div>
+        <div class="panel-body" id="thisone">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+          <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+        </div>
+      </div>
+      
+      <div class="panel-question">
+        <div class="panel-heading">
+          + Lorem ipsum dolor sit?
+        </div>
+        <div class="panel-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+          <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+        </div>
+      </div>
+      
+      <div class="panel-question">
+        <div class="panel-heading">
+          + Lorem ipsum dolor sit?
+        </div>
+        <div class="panel-body">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid voluptate fugit quaerat non molestiae quo magni soluta minima corporis! Soluta, ipsa et.</p>
+          <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    
+    const btn = document.getElementById('btn-collapse')
+    const question = document.getElementsByClassName('panel-question')
+    const heading = document.getElementsByClassName('panel-heading')
+    const answer = document.getElementsByClassName('panel-body')
+
+    for(let i = 0; i < heading.length; i++) {
+      heading[i].addEventListener('click', function(e){
+        for(let j = 0; j < question.length; j++) {
+          question[j].classList.remove('active');
+          this.parentNode.classList.add('active')
+          activateBody();
+        }
+      });
+    }
+
+    function activateBody() {
+      for(let x = 0; x < answer.length; x++) {
+        answer[x].style.display = 'none';
+      }
+      let activePanel = document.querySelector('.panel-question.active .panel-body')
+      activePanel.style.display ='block';
+    }
+    activateBody();
+
+    btn.addEventListener('click',function(){
+      for(let i = 0; i < answer.length; i++) {
+      answer[i].style.display = 'none';
+      }
+    })
+
+
+
+  </script>
+</body>
+
+</html>
