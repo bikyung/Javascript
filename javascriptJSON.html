@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+// ※ JSON 사용시 주의 사항
+
+// 값을 표현할 때는 문자열, 숫자 , 불 자료형만 사용할 수 있다.( 함수등은 사용 불가)
+// 문자열은 반드시 따옴표로 만들어야 된다.
+// 키(key)에도 반드시 따옴표를 붙여야 된다.
+//  {
+//  "name" : "롤체라떼",
+//  "price" : 18000,
+//  "maker" : "스타벅스"
+//  }
+// JSON 메서드
+// 1. JSON.stringify() 메서드
+
+//자료를 생성
+const data = [{
+ "name" : "돌체라떼",
+ "price" : 6000,
+ "maker" : "스타벅스"
+}, {
+ "name" : "아메리카노",
+ "price" : 4000,
+ "maker" : "스타벅스"
+}]
+
+//자료를 JSON으로 변환
+//매개변수를 1개 넣었을때
+console.log(JSON.stringify(data));
+
+//매개변수를 2개 넣었을때 , 끝에 2는 들여쓰기로 표현 
+console.log(JSON.stringify(data, null, 2))
+
+// 2. JSON.parse() 메서드
+// → JSON 문자열을 자바스크립트 객체로 전개할 때 사용 ( 매개변수에 JSON 형식의 문자열을 넣어주면 됨)
+
+//자료를 생성
+const data = [{
+ "name" : "돌체라떼",
+ "price" : 6000,
+ "maker" : "스타벅스"
+}, {
+ "name" : "아메리카노",
+ "price" : 4000,
+ "maker" : "스타벅스"
+}]
+
+//자료를 JSON으로 변환
+const json = JSON.stringify(data)
+console.log(json);
+
+//JSON 문자열을 다시 자바스크립트 객체로 변환
+console.log(JSON.parse(json));
+  </script>
+</body>
+</html>
