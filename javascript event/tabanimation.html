@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>teb animation</title>
+  <style>
+    * { 
+      margin:0;
+      padding:0;
+    }
+    a {
+      text-decoration: none;
+    }
+    .inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .tab__group {
+      position: relative;
+    }
+    .tab__menu {
+      display: flex;
+      list-style: none;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 1;
+    }
+    .tab__menu li {
+      margin-right: 50px;
+    }
+    .tab__menu li a { 
+      color: #999;
+      display: block;
+      padding: 0 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .tab__menu li a.active {
+      color: white;
+    }
+    #tab-1,
+    #tab-2 {
+      margin-bottom: 30px;
+    }
+    .highlight {
+      position: absolute;
+      width: 98px;
+      top:0;
+      left:0;
+      bottom: 0;
+      background: #000;
+      transition: 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    }
+    #tab__content {
+      min-height: 300px;
+    }
+    #tab__content > div {
+      display:none;
+    }
+    #tab__content > div:first-child {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="body__container">
+    <div class="inner">
+      <div class="tab__group">
+        <ul class="tab__menu">
+          <li><a href="#tab-1">basic</a></li>
+          <li><a href="#tab-2">advanced</a></li>
+          <li><a href="#tab-3">expert</a></li>
+        </ul>
+        <span class="highlight"></span>
+      </div>
+      <div id="tab__content">
+        <div id="tab-1">
+          <h2>Basic plan</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus enim, pharetra sed mi ut, consequat ullamcorper justo. Maecenas ut facilisis odio, quis posuere sem. Suspendisse at lacus egestas libero condimentum lobortis. In pretium, tortor sit amet efficitur laoreet, eros massa tristique dolor, ut mattis lorem dui eget sapien. In pharetra, dolor ac eleifend placerat, nibh nunc ornare justo, dapibus vehicula libero quam a tortor. Quisque eros urna, maximus a cursus quis, volutpat eget felis. Maecenas efficitur neque in blandit tincidunt. Proin eu dignissim dui.
+          </p>
+        </div>
+        <div id="tab-2">
+          <h2>Advanced</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus enim, pharetra sed mi ut, consequat ullamcorper justo. Maecenas ut facilisis odio, quis posuere sem. Suspendisse at lacus egestas libero condimentum lobortis. In pretium, tortor sit amet efficitur laoreet, eros massa tristique dolor, ut mattis lorem dui eget sapien. In pharetra, dolor ac eleifend placerat, nibh nunc ornare justo, dapibus vehicula libero quam a tortor. Quisque eros urna, maximus a cursus quis, volutpat eget felis. Maecenas efficitur neque in blandit tincidunt. Proin eu dignissim dui.
+          </p>
+        </div>
+        <div id="tab-3">
+          <h2>Expert</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus enim, pharetra sed mi ut, consequat ullamcorper justo. Maecenas ut facilisis odio, quis posuere sem. Suspendisse at lacus egestas libero condimentum lobortis. In pretium, tortor sit amet efficitur laoreet, eros massa tristique dolor, ut mattis lorem dui eget sapien. In pharetra, dolor ac eleifend placerat, nibh nunc ornare justo, dapibus vehicula libero quam a tortor. Quisque eros urna, maximus a cursus quis, volutpat eget felis. Maecenas efficitur neque in blandit tincidunt. Proin eu dignissim dui.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const tabMenu = document.querySelectorAll('.tab__menu li');
+    const tabContent = document.querySelectorAll('#tab__content > div');
+    const highLight = document.querySelector('.highlight');
+
+    tabMenu.forEach(function(item, idx){
+      item.addEventListener('click', function(e){
+        e.preventDefault();
+        showContent(idx);
+        moveHighLight(idx);
+      })
+    })
+
+    function showContent(num) {
+      tabContent.forEach(function(item){
+        item.style.display = "none";
+      });
+      tabContent[num].style.display ='block'
+    }
+
+    function moveHighLight(num) {
+      const newLeft = tabMenu[num].offsetLeft;
+      const newWidth = tabMenu[num].offsetWidth;
+      console.log(newWidth);
+      highLight.style.left = newLeft + 'px';
+      highLight.style.width = newWidth + 'px';
+    }
+
+  </script>
+</body>
+</html>
