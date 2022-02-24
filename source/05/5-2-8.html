@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>clearTimeout,clearInterval</title>
+    <script>
+
+      let id
+      let count = 0
+      id = setInterval(() => {
+        console.log(`1초마다 실행됨(${count}번째)`)
+        count++
+      }, 2000) 
+
+      setTimeout(() => {
+        console.log('타이머를 종료')
+        clearInterval(id)
+      },5000)
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setTimeout,setInterval</title>
+    <script>
+
+      setTimeout(() => {
+        console.log('2초후에 실행함')
+      },2000)
+
+      let count = 0;
+      setInterval(() => {
+        count++;
+        console.log(`${count}번째`); // 2초마다 실행됨
+      },2000)
+
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <script>
+
+      function callFunc(callback) {
+        for(let i = 0; i < 5; i++) {
+          callback(i);
+        }
+      }
+
+      function callprint(i) {
+        console.log(`${i}번째 함수 입니다.`)
+      }
+
+      callFunc(callprint);
+
+    </script>
+  </head>
+  <body></body>
+</html>
+ 
